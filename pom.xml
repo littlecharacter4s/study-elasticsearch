@@ -15,6 +15,12 @@
             <artifactId>elasticsearch-rest-high-level-client</artifactId>
             <version>7.5.1</version>
         </dependency>
+        <!-- fastjson -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.30</version>
+        </dependency>
         <!-- junit -->
         <dependency>
             <groupId>junit</groupId>
