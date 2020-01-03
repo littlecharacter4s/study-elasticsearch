@@ -5,14 +5,23 @@ import org.junit.Test;
 public class ESClientTest {
 
     @Test
-    public void testCreate() {
-        // ESClientHelper.getInstance().createIndex("mm-payment");
-        ESClientHelper.getInstance().addDocument("mm-order");
+    public void testCreateIndex() {
+        ESClientHelper.getInstance().createIndex("mm-payment");
+    }
+
+    @Test
+    public void testCreateDocument() {
+        ESClientHelper.getInstance().addDocument("mm-payment", "1234567890");
+    }
+
+    @Test
+    public void testQuery() {
+        ESClientHelper.getInstance().queryDocument("mm-order", "TzebaG8B0canAUH5k1u5");
     }
 
     @Test
     public void testSearch() {
-        ESClientHelper.getInstance().getDocument("mm-order", "TzebaG8B0canAUH5k1u5");
+        ESClientHelper.getInstance().searchDocument("mm-order");
     }
 
     @Test
@@ -21,8 +30,13 @@ public class ESClientTest {
     }
 
     @Test
-    public void testDelete() {
+    public void testDeleteDocument() {
         ESClientHelper.getInstance().deleteDocument("mm-order", "UjdRaW8B0canAUH5Vlu6");
+    }
+
+    @Test
+    public void testDeleteIndex() {
+        ESClientHelper.getInstance().deleteIndex("mm-payment");
     }
 
     @Test
